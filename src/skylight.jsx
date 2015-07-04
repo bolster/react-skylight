@@ -72,8 +72,14 @@ var SkyLight = React.createClass({
             overlay = (<div style={overlayStyles}></div>);
         }
 
+        var className = "skylight-wrapper";
+
+        if (this.props.className) {
+            className += " " + this.props.className;
+        }
+
         return (
-            <section className="skylight-wrapper">
+            <section className={className}>
                 {overlay}
                 <div style={dialogStyles}>
                     <a role="button" style={closeButtonStyle} onClick={this.hide}>&times;</a>
